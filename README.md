@@ -5,5 +5,5 @@
 ## Install
 
 ```
-asdf plugin-add argo|argocd https://github.com/trnubo/asdf-argo.git
+asdf plugin-add argo|argo-cd https://github.com/trnubo/asdf-argo.git
 ```

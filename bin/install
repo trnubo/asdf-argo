@@ -21,8 +21,8 @@ install() {
 
   mkdir -p "${bin_install_path}"
 
-  local bin_path="${bin_install_path}/${toolname}"
-  echo "Downloading ${toolname} from ${download_url}"
+  local bin_path="${bin_install_path}/${toolname/-/}"
+  echo "Downloading ${toolname/-/} from ${download_url}"
   curl -sSf -L "${download_url}" -o "${bin_path}"
   chmod +x $bin_path
 }
@@ -39,7 +39,7 @@ get_download_url() {
   local version="$1"
   local platform="$(get_platform)"
   local arch="$(get_arch)"
-  echo "https://github.com/argoproj/${toolname}/releases/download/v${version}/${toolname}-${platform}-${arch}"
+  echo "https://github.com/argoproj/${toolname}/releases/download/v${version}/${toolname/-/}-${platform}-${arch}"
 }
 
 install $ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH
